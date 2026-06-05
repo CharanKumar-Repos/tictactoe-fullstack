@@ -165,7 +165,10 @@ Covers: valid move, invalid move, occupied cell, wrong player, turn switching, r
 
 ### Frontend Tests
 ```bash
-cd frontend
+cd C:\Users\FCI\Desktop\-tictactoe\frontend-angular
+ng test --watch=false --browsers=ChromeHeadless
+
+cd C:\Users\FCI\Desktop\-tictactoe\frontend-react
 npm test
 ```
 
