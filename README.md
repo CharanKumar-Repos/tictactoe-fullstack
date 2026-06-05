@@ -71,7 +71,7 @@ Logs are written to `logs/tictactoe-<date>.log`
 ```bash
 cd frontend-angular
 npm install
-ng serve
+ng serve --open
 ```
 
 The Angular app starts at **http://localhost:4200**
@@ -97,11 +97,11 @@ The React app starts at **http://localhost:3000**
 
 Open three separate terminals:
 
-| Terminal | Command                                   | URL                   |
-|----------|-------------------------------------------|-----------------------|
-| Backend  | `cd backend/TicTacToe.API` → `dotnet run` | http://localhost:5000 |
-| Angular  | `cd frontend-angular` → `ng serve`        | http://localhost:4200 |
-| React    | `cd frontend-react` → `npm start`         | http://localhost:3000 |
+| Terminal | Command                                     | URL                   |
+|----------|---------------------------------------------|-----------------------|
+| Backend  | `cd backend/TicTacToe.API` → `dotnet run`   | http://localhost:5000 |
+| Angular  | `cd frontend-angular` → `ng serve --open`   | http://localhost:4200 |
+| React    | `cd frontend-react` → `npm start`           | http://localhost:3000 |
 
 Both frontends connect to the same backend.
 
