@@ -1,13 +1,13 @@
 /* ─── Variables ─────────────────────────────────────────── */
-$x-color: #e74c3c;
-$o-color: #2980b9;
-$win-color: #27ae60;
-$bg: #1a1a2e;
-$surface: #16213e;
-$surface2: #0f3460;
-$text: #eaeaea;
-$muted: #a0aec0;
-$border: #2d3748;
+$x-color: #34d399;
+$o-color: #fbbf24;
+$win-color: #34d399;
+$bg: #061412;
+$surface: #0a2420;
+$surface2: #0f3830;
+$text: #d1fae5;
+$muted: #6ee7b7;
+$border: #0f3830;
 
 /* ─── Reset / Base ──────────────────────────────────────── */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,8 +63,8 @@ body {
     font-size: 0.9rem;
 
     &.active {
-      border-color: $o-color;
-      background: rgba($o-color, 0.2);
+      border-color: $x-color;
+      background: rgba($x-color, 0.15);
       color: $text;
     }
     &:hover:not(.active) { border-color: $muted; }
@@ -73,15 +73,15 @@ body {
 
 /* ─── Error banner ──────────────────────────────────────── */
 .error-banner {
-  background: rgba($x-color, 0.15);
-  border: 1px solid $x-color;
+  background: rgba(#0f3830, 0.5);
+  border: 1px solid $border;
   border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: lighten($x-color, 20%);
+  color: $o-color;
 
   button {
     background: none; border: none; color: inherit; cursor: pointer;
@@ -110,11 +110,13 @@ body {
   border-radius: 8px;
   margin-bottom: 1rem;
   background: $surface;
+  border: 1px solid rgba($x-color, 0.3);
   min-height: 2.4rem;
   transition: background 0.3s;
+  color: $x-color;
 
-  &.won { background: rgba($win-color, 0.2); color: lighten($win-color, 20%); }
-  &.draw { background: rgba(#f39c12, 0.2); color: #f39c12; }
+  &.won { background: rgba($win-color, 0.15); color: $x-color; border-color: $win-color; }
+  &.draw { background: rgba($o-color, 0.15); color: $o-color; border-color: $o-color; }
 }
 
 /* ─── Board ─────────────────────────────────────────────── */
@@ -143,12 +145,12 @@ body {
   transition: background 0.15s, transform 0.1s;
   color: $text;
 
-  &:not(:disabled):hover { background: lighten($surface, 5%); transform: scale(1.03); }
+  &:not(:disabled):hover { background: lighten($surface, 4%); transform: scale(1.03); }
   &:disabled { cursor: default; }
   &.x { color: $x-color; }
   &.o { color: $o-color; }
   &.winning {
-    background: rgba($win-color, 0.25);
+    background: rgba($win-color, 0.15);
     box-shadow: 0 0 0 2px $win-color;
     animation: pulse 1s infinite alternate;
   }
@@ -156,7 +158,7 @@ body {
 
 @keyframes pulse {
   from { box-shadow: 0 0 0 2px $win-color; }
-  to   { box-shadow: 0 0 8px 3px $win-color; }
+  to   { box-shadow: 0 0 10px 3px $win-color; }
 }
 
 /* ─── Controls ──────────────────────────────────────────── */
@@ -177,9 +179,9 @@ body {
 
   &:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
   &:disabled { opacity: 0.4; cursor: not-allowed; }
-  &.btn-primary { background: $o-color; color: #fff; }
+  &.btn-primary  { background: $x-color; color: $bg; }
   &.btn-secondary { background: $surface2; color: $text; }
-  &.btn-danger { background: rgba($x-color, 0.8); color: #fff; }
+  &.btn-danger   { background: rgba($o-color, 0.15); color: $o-color; border: 1px solid rgba($o-color, 0.4); }
 }
 
 /* ─── Info section ──────────────────────────────────────── */
@@ -193,7 +195,7 @@ body {
   background: $surface;
   border-radius: 12px;
   padding: 1rem;
-  border: 1px solid $border;
+  border: 1px solid rgba($x-color, 0.2);
 
   h2 {
     font-size: 1rem;
@@ -213,11 +215,12 @@ body {
   th, td {
     padding: 0.5rem 0.75rem;
     text-align: left;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid rgba($x-color, 0.12);
+    color: $text;
   }
   th { color: $muted; font-size: 0.8rem; text-transform: uppercase; }
   .draw-row td { color: $muted; }
-  td:last-child { font-weight: 700; font-size: 1.1rem; }
+  td:last-child { font-weight: 700; font-size: 1.1rem; color: $x-color; }
 }
 
 /* ─── Move history ──────────────────────────────────────── */
@@ -237,10 +240,11 @@ body {
   th, td {
     padding: 0.4rem 0.6rem;
     text-align: left;
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid rgba($x-color, 0.12);
+    color: $text;
   }
   th { color: $muted; font-size: 0.75rem; }
-  .last-move td { background: rgba($o-color, 0.08); }
+  .last-move td { background: rgba($x-color, 0.07); }
   .player-x { color: $x-color; font-weight: 700; }
   .player-o { color: $o-color; font-weight: 700; }
 }
@@ -251,7 +255,7 @@ body {
 .loading-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,7 +265,7 @@ body {
 .spinner {
   width: 40px; height: 40px;
   border: 4px solid $border;
-  border-top-color: $o-color;
+  border-top-color: $x-color;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
