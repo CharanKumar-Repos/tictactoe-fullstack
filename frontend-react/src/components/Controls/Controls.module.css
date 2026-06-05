@@ -24,6 +24,6 @@
   cursor: not-allowed;
 }
 
-.primary  { background: #2980b9; color: #fff; }
-.secondary { background: #0f3460; color: #eaeaea; }
-.danger   { background: rgba(231, 76, 60, 0.8); color: #fff; }
+.primary   { background: #e07b2a; color: #fff; }
+.secondary { background: #2a1505; color: #f5e6d0; border: 1px solid #3d2008; }
+.danger    { background: rgba(160, 60, 10, 0.4); color: #f5c97a; border: 1px solid #7a3010; }

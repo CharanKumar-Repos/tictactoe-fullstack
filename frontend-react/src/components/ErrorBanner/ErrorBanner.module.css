@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(231, 76, 60, 0.15);
-  border: 1px solid #e74c3c;
+  background: rgba(160, 60, 10, 0.2);
+  border: 1px solid #7a3010;
   border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  color: #ff8a7a;
+  color: #f5c97a;
   font-size: 0.9rem;
 }
 
@@ -21,6 +21,4 @@
   line-height: 1;
 }
 
-.dismiss:hover {
-  opacity: 0.7;
-}
+.dismiss:hover { opacity: 0.7; }

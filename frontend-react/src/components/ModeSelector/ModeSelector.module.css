@@ -5,29 +5,29 @@
 }
 
 .label {
-  color: #a0aec0;
+  color: #c4956a;
   font-size: 0.9rem;
 }
 
 .btn {
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  border: 2px solid #2d3748;
+  border: 2px solid #3d2008;
   background: transparent;
-  color: #a0aec0;
+  color: #c4956a;
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.9rem;
 }
 
 .btn:hover:not(.active):not(:disabled) {
-  border-color: #a0aec0;
+  border-color: #c4956a;
 }
 
 .btn.active {
-  border-color: #2980b9;
-  background: rgba(41, 128, 185, 0.2);
-  color: #eaeaea;
+  border-color: #e07b2a;
+  background: rgba(224, 123, 42, 0.15);
+  color: #f5e6d0;
 }
 
 .btn:disabled {

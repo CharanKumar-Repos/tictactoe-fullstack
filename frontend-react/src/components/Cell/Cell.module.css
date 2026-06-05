@@ -1,18 +1,18 @@
 .cell {
   width: 100px;
   height: 100px;
-  background: #16213e;
+  background: #2a1505;
   border: none;
   border-radius: 8px;
   font-size: 2.5rem;
   font-weight: 800;
   cursor: pointer;
-  color: #eaeaea;
+  color: #f5e6d0;
   transition: background 0.15s, transform 0.1s;
 }
 
 .cell:hover:not(:disabled) {
-  background: #1e2d4a;
+  background: #331a07;
   transform: scale(1.03);
 }
 
@@ -20,21 +20,16 @@
   cursor: default;
 }
 
-.x {
-  color: #e74c3c;
-}
-
-.o {
-  color: #2980b9;
-}
+.x { color: #e07b2a; }
+.o { color: #f5c97a; }
 
 .winning {
-  background: rgba(39, 174, 96, 0.25) !important;
-  box-shadow: 0 0 0 2px #27ae60;
+  background: rgba(224, 123, 42, 0.25) !important;
+  box-shadow: 0 0 0 2px #e07b2a;
   animation: pulse 1s infinite alternate;
 }
 
 @keyframes pulse {
-  from { box-shadow: 0 0 0 2px #27ae60; }
-  to   { box-shadow: 0 0 8px 3px #27ae60; }
+  from { box-shadow: 0 0 0 2px #e07b2a; }
+  to   { box-shadow: 0 0 10px 3px #e07b2a; }
 }

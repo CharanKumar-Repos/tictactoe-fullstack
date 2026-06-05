@@ -1,8 +1,8 @@
 .card {
-  background: #16213e;
+  background: #2a1505;
   border-radius: 12px;
   padding: 1rem;
-  border: 1px solid #2d3748;
+  border: 1px solid rgba(224, 123, 42, 0.2);
 }
 
 .title {
@@ -10,34 +10,21 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #a0aec0;
+  color: #c4956a;
   margin: 0 0 0.75rem 0;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
+.table { width: 100%; border-collapse: collapse; }
 
-.table th,
-.table td {
+.table th, .table td {
   padding: 0.5rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #2d3748;
-  color: #eaeaea;
+  border-bottom: 1px solid rgba(224, 123, 42, 0.15);
+  color: #f5e6d0;
 }
 
-.table th {
-  color: #a0aec0;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-.score {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.playerX { color: #e74c3c; font-weight: 700; }
-.playerO { color: #2980b9; font-weight: 700; }
-.drawRow td { color: #a0aec0; }
+.table th { color: #c4956a; font-size: 0.8rem; text-transform: uppercase; }
+.score { font-weight: 700; font-size: 1.1rem; color: #f5c97a; }
+.playerX { color: #e07b2a; font-weight: 700; }
+.playerO { color: #f5c97a; font-weight: 700; }
+.drawRow td { color: #c4956a; }

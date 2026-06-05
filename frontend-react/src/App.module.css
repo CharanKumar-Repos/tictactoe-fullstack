@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 1.5rem;
   position: relative;
-  color: #eaeaea;
+  color: #f5e6d0;
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
@@ -20,7 +20,7 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #e74c3c, #2980b9);
+  background: linear-gradient(135deg, #e07b2a, #f5c97a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
