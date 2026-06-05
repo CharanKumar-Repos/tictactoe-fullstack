@@ -1,0 +1,105 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Tic Tac Toe</h1>
+    <div class="mode-selector">
+      <label>Mode:</label>
+      <button
+        [class.active]="selectedMode === 'TwoPlayer'"
+        (click)="onModeChange('TwoPlayer')">
+        👥 Two Player
+      </button>
+      <button
+        [class.active]="selectedMode === 'VsComputer'"
+        (click)="onModeChange('VsComputer')">
+        🤖 vs Computer
+      </button>
+    </div>
+  </header>
+
+  <div *ngIf="error" class="error-banner">
+    ⚠️ {{ error }}
+    <button (click)="error = null">✕</button>
+  </div>
+
+  <main class="game-layout" *ngIf="state">
+    <!-- Left: Board + controls -->
+    <section class="game-section">
+      <div class="status-bar" [class.won]="state.status === 'Won'" [class.draw]="state.status === 'Draw'">
+        {{ statusMessage }}
+      </div>
+
+      <div class="board" [class.locked]="isBoardLocked()">
+        <button
+          *ngFor="let cell of boardFlat; let i = index"
+          class="cell"
+          [class.x]="cell === 'X'"
+          [class.o]="cell === 'O'"
+          [class.winning]="isWinningCell(i)"
+          [disabled]="cell !== '' || isBoardLocked()"
+          (click)="onCellClick(i)"
+          [attr.aria-label]="'Cell ' + (i + 1) + ': ' + (cell || 'empty')"
+        >
+          {{ cell }}
+        </button>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-secondary" (click)="undoMove()" [disabled]="!canUndo()">
+          ↩ Undo
+        </button>
+        <button class="btn btn-primary" (click)="resetGame()">
+          🔄 Reset Game
+        </button>
+        <button class="btn btn-danger" (click)="resetScoreboard()">
+          🗑 Reset Scores
+        </button>
+      </div>
+    </section>
+
+    <!-- Right: Scoreboard + Move History -->
+    <aside class="info-section">
+      <div class="scoreboard card">
+        <h2>Scoreboard</h2>
+        <table>
+          <thead>
+            <tr><th>Player</th><th>Wins</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>X</td><td>{{ state.scoreboard.xWins }}</td></tr>
+            <tr><td>O</td><td>{{ state.scoreboard.oWins }}</td></tr>
+            <tr class="draw-row"><td>Draws</td><td>{{ state.scoreboard.draws }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="move-history card">
+        <h2>Move History</h2>
+        <div class="history-scroll">
+          <table *ngIf="state.moveHistory.length > 0; else noMoves">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let move of state.moveHistory" [class.last-move]="move.moveNumber === state.moveHistory.length">
+                <td>{{ move.moveNumber }}</td>
+                <td [class.player-x]="move.player === 'X'" [class.player-o]="move.player === 'O'">{{ move.player }}</td>
+                <td>{{ move.position }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ng-template #noMoves>
+            <p class="no-moves">No moves yet. Start playing!</p>
+          </ng-template>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div *ngIf="loading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+</div>
