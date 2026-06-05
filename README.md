@@ -204,11 +204,11 @@ All exceptions are caught centrally and mapped to appropriate HTTP status codes:
 
 ## AI Tools & Prompt Summary
 
-**Tool used:** Claude (Anthropic)
+**Tool used:** ChatGPT
 
 **Workflow:**
-1. Uploaded the problem statement and asked Claude to analyse it as a senior engineer
-2. Requested full implementation: .NET backend + Angular frontend + tests + README
+1. Prompt given to develop game by explaining senarios clearly.
+2. Requested full implementation: .NET backend + Angular frontend and React frontend + tests + README
 3. Reviewed all generated code carefully for correctness, especially:
    - Win detection logic and all 8 winning lines
    - Undo behavior differences between TwoPlayer and VsComputer modes
@@ -218,7 +218,7 @@ All exceptions are caught centrally and mapped to appropriate HTTP status codes:
 4. Verified DTO mapping (2D array → string[][], flat index → row/col conversions)
 5. Validated test coverage against every required scenario in the spec
 
-**What was changed manually:** None — but the code was reviewed line-by-line for logic correctness before submission.
+**What was changed manually:** In React frontend implemented components and maintained clean code — And the code was reviewed line-by-line for logic correctness before submission.
 
 **Trade-offs made:**
 - Chose Option B (undo after completion) for better UX
