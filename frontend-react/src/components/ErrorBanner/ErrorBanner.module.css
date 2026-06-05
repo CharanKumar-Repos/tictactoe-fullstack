@@ -1,0 +1,26 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  color: #ff8a7a;
+  font-size: 0.9rem;
+}
+
+.dismiss {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+
+.dismiss:hover {
+  opacity: 0.7;
+}

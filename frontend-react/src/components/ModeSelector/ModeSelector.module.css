@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #2d3748;
+  background: transparent;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn:hover:not(.active):not(:disabled) {
+  border-color: #a0aec0;
+}
+
+.btn.active {
+  border-color: #2980b9;
+  background: rgba(41, 128, 185, 0.2);
+  color: #eaeaea;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

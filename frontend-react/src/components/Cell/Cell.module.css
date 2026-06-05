@@ -1,0 +1,40 @@
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #16213e;
+  border: none;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: #eaeaea;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.cell:hover:not(:disabled) {
+  background: #1e2d4a;
+  transform: scale(1.03);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.x {
+  color: #e74c3c;
+}
+
+.o {
+  color: #2980b9;
+}
+
+.winning {
+  background: rgba(39, 174, 96, 0.25) !important;
+  box-shadow: 0 0 0 2px #27ae60;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 0 2px #27ae60; }
+  to   { box-shadow: 0 0 8px 3px #27ae60; }
+}

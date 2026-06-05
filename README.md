@@ -40,13 +40,14 @@ A browser-based Tic Tac Toe application with an **Angular 17** frontend and **.N
 
 | Tool        | Version  |
 |-------------|----------|
-| .NET SDK    | 10.0+     |
+| .NET SDK    | 8.0+     |
 | Node.js     | 18+      |
 | Angular CLI | 17+      |
 
 ```bash
 # Install Angular CLI if not present
 npm install -g @angular/cli
+> React frontend uses Vite and has no additional global installs required beyond Node.js.
 ```
 
 ---
@@ -68,7 +69,7 @@ Logs are written to `logs/tictactoe-<date>.log`
 ## How to Run the Frontend Locally
 
 ```bash
-cd frontend
+cd frontend-angular
 npm install
 ng serve
 ```
@@ -76,6 +77,33 @@ ng serve
 The Angular app starts at **http://localhost:4200**
 
 > The frontend proxies all API calls to `http://localhost:5000`. Make sure the backend is running first.
+
+
+## How to Run React Frontend
+
+```bash
+cd frontend-react
+npm install
+npm start
+```
+
+The React app starts at **http://localhost:3000**
+
+> Make sure the backend is running on http://localhost:5000 before starting.
+
+---
+
+## Running All Three Simultaneously
+
+Open three separate terminals:
+
+| Terminal | Command                                   | URL                   |
+|----------|-------------------------------------------|-----------------------|
+| Backend  | `cd backend/TicTacToe.API` → `dotnet run` | http://localhost:5000 |
+| Angular  | `cd frontend-angular` → `ng serve`        | http://localhost:4200 |
+| React    | `cd frontend-react` → `npm start`         | http://localhost:3000 |
+
+Both frontends connect to the same backend.
 
 ---
 

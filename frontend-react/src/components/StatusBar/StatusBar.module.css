@@ -1,0 +1,22 @@
+.bar {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #16213e;
+  min-height: 2.4rem;
+  transition: background 0.3s, color 0.3s;
+  color: #eaeaea;
+}
+
+.won {
+  background: rgba(39, 174, 96, 0.2);
+  color: #6ddb9e;
+}
+
+.draw {
+  background: rgba(243, 156, 18, 0.2);
+  color: #f39c12;
+}
